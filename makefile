@@ -87,7 +87,7 @@ all: $(hZSH) $(hX11) $(hTYPORA) $(hBSPWM) $(hGTK2) $(hGTK3) $(hNFETCH) $(hPICOM)
 	ln -sfn $(DIR)/$(FONTS)/noto-nerd-font			$(hFONTS)/noto-nerd-font
 	ln -sfn $(DIR)/$(ICONS)/capitaine-cursors-light	$(hICONS)/capitaine-cursors-light
 	ln -sfn $(DIR)/$(ICONS)/nordic-darker-icons		$(hICONS)/nordic-darker-icons
-	ln -sfn $(DIR)/$(THEMES)/nordic-darker-gtk		$(hTHEMES)/nordic-darker-icons
+	ln -sfn $(DIR)/$(THEMES)/nordic-darker-gtk		$(hTHEMES)/nordic-darker-gtk
 	ln -sfn $(DIR)/$(FIREFOX)/css					$(hFIREFOX)/css
 	ln -sfn $(DIR)/$(FIREFOX)/startpage				$(hFIREFOX)/startpage
 	ln -sfn $(DIR)/$(DOCUMENTS)/wallpapers			$(hDOCUMENTS)/wallpapers
