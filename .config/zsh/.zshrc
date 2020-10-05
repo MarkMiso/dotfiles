@@ -1,0 +1,23 @@
+# zsh config by markmiso
+
+# enable colors and change prompt
+autoload -U colors && colors
+PS1="λ %~ "
+
+# configure history
+HISTSIZE=1000
+SAVEHIST=1000
+
+# enable vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# enable tab completion
+autoload -Uz compinit
+compinit
+
+# Aliases
+alias ls='ls --color=auto'
+alias lyrics='$HOME/.local/bin/lyrics'
+alias vimf='$XDG_CONFIG_HOME/vifm/scripts/vifmrun.sh'
+alias music='ncmpc'

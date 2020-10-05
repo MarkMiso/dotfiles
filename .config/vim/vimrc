@@ -1,0 +1,28 @@
+" vim config by markmiso
+
+" set vim to follow XDG Base Directory specifications
+set undodir=$XDG_DATA_HOME/vim/undo
+set directory=$XDG_DATA_HOME/vim/swap
+set backupdir=$XDG_DATA_HOME/vim/backup
+set viminfo+=n$XDG_DATA_HOME/vim/viminfo
+set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
+let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
+
+" show absolute number for the current line and relative numbers for other lines 
+set number relativenumber
+
+" set vim to use same clibpoard as X
+set clipboard=unnamedplus
+
+" enable sytax highlighting
+filetype plugin on
+syntax on
+
+" set vim theme
+colo nord
+
+" enable and configure indentation
+filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
