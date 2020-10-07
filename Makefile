@@ -48,9 +48,6 @@ hVIFM := $(HOME)/$(VIFM)
 VIM := $(XDG_CONF)/vim
 hVIM := $(HOME)/$(VIM)
 
-FONTS := $(XDG_DATA)/fonts
-hFONTS := $(HOME)/$(FONTS)
-
 ICONS := $(XDG_DATA)/icons
 hICONS := $(HOME)/$(ICONS)
 
@@ -63,7 +60,10 @@ hFIREFOX := $(HOME)/$(FIREFOX)
 DOCUMENTS := Documents
 hDOCUMENTS := $(HOME)/$(DOCUMENTS)
 
-all: $(hZSH) $(hX11) $(hTYPORA) $(hBSPWM) $(hGTK2) $(hGTK3) $(hNFETCH) $(hPICOM) $(hPOLYBAR) $(hROFI) $(hROFI)/themes $(SPOOFY) $(hSXHKD) $(hVIFM)/scripts $(hVIFM)/colors $(hVIM) $(hVIM)/colors $(hXDG_DATA)/vim/backup $(hXDG_DATA)/vim/swap $(hXDG_DATA)/vim/undo $(hFONTS) $(hICONS) $(hTHEMES) $(hFIREFOX) $(hDOCUMENTS)
+FONTS := $(XDG_DATA)/fonts
+hFONTS := $(HOME)/$(FONTS)
+
+all: $(hZSH) $(hX11) $(hTYPORA) $(hBSPWM) $(hGTK2) $(hGTK3) $(hNFETCH) $(hPICOM) $(hPOLYBAR) $(hROFI) $(hROFI)/themes $(SPOOFY) $(hSXHKD) $(hVIFM)/scripts $(hVIFM)/colors $(hVIM) $(hVIM)/colors $(hXDG_DATA)/vim/backup $(hXDG_DATA)/vim/swap $(hXDG_DATA)/vim/undo $(hICONS) $(hTHEMES) $(hFIREFOX) $(hDOCUMENTS) $(hFONTS)/Noto-nerd $(DIR)/$(FONTS)/Noto.zip
 	ln -s $(DIR)/$(ZSH)/.zshrc 						$(hZSH)/.zshrc
 	ln -s $(DIR)/.zshenv 							$(HOME)/.zshenv
 	ln -s $(DIR)/$(X11)/Xresources 					$(hX11)/Xresources
@@ -87,13 +87,13 @@ all: $(hZSH) $(hX11) $(hTYPORA) $(hBSPWM) $(hGTK2) $(hGTK3) $(hNFETCH) $(hPICOM)
 	ln -s $(DIR)/$(VIM)/colors/nord.vim				$(hVIM)/colors/nord.vim
 	ln -s $(DIR)/$(XDG_CONF)/alacritty.yml			$(hXDG_CONF)/alacritty.yml
 	ln -s $(DIR)/$(XDG_CONF)/redshift.conf			$(hXDG_CONF)/redshift.conf
-	ln -s $(DIR)/$(FONTS)/noto-nerd-font			$(hFONTS)/noto-nerd-font
 	ln -s $(DIR)/$(ICONS)/capitaine-cursors-light	$(hICONS)/capitaine-cursors-light
 	ln -s $(DIR)/$(ICONS)/nordic-darker-icons		$(hICONS)/nordic-darker-icons
 	ln -s $(DIR)/$(THEMES)/nordic-darker-gtk		$(hTHEMES)/nordic-darker-gtk
 	ln -s $(DIR)/$(FIREFOX)/css						$(hFIREFOX)/css
 	ln -s $(DIR)/$(FIREFOX)/startpage				$(hFIREFOX)/startpage
 	ln -s $(DIR)/$(DOCUMENTS)/wallpapers			$(hDOCUMENTS)/wallpapers
+	unzip -d $(hFONTS)/Noto-nerd 					$(DIR)/$(FONTS)/Noto.zip
 
 $(hZSH):
 	mkdir -p $(hZSH)
@@ -158,9 +158,6 @@ $(hXDG_DATA)/vim/undo:
 $(hVIM)/colors:
 	mkdir -p $(hVIM)/colors
 
-$(hFONTS):
-	mkdir -p $(hFONTS)
-
 $(hICONS):
 	mkdir -p $(hICONS)
 
@@ -172,6 +169,12 @@ $(hFIREFOX):
 
 $(hDOCUMENTS):
 	mkdir -p $(hDOCUMENTS)
+
+$(hFONTS)/Noto-nerd:
+	mkdir -p $(hFONTS)/Noto-nerd
+
+$(DIR)/$(FONTS)/Noto.zip:
+	wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Noto.zip -P $(DIR)/$(FONTS)
 
 clean:
 	rm -Rf $(hZSH)/.zshrc
@@ -197,10 +200,10 @@ clean:
 	rm -Rf $(hVIM)/colors/nord.vim
 	rm -Rf $(hXDG_CONF)/alacritty.yml
 	rm -Rf $(hXDG_CONF)/redshift.conf
-	rm -Rf $(hFONTS)/noto-nerd-font
 	rm -Rf $(hICONS)/capitaine-cursors-light
 	rm -Rf $(hICONS)/nordic-darker-icons
 	rm -Rf $(hTHEMES)/nordic-darker-gtk
 	rm -Rf $(hFIREFOX)/css
 	rm -Rf $(hFIREFOX)/startpage
 	rm -Rf $(hDOCUMENTS)/wallpapers
+	rm -Rf $(hFONTS)/Noto-nerd
