@@ -20,4 +20,4 @@ compinit
 alias ls='ls --color=auto'
 alias lyrics='$HOME/.local/bin/lyrics'
 alias vimf='$XDG_CONFIG_HOME/vifm/scripts/vifmrun.sh'
-alias music='ncmpc'
+alias music='$XDG_CONFIG_HOME/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp-ueberzug'
