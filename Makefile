@@ -48,6 +48,9 @@ hVIFM := $(HOME)/$(VIFM)
 VIM := $(XDG_CONF)/vim
 hVIM := $(HOME)/$(VIM)
 
+NCMPC := $(XDG_CONF)/ncmpcpp
+hNCMPC := $(HOME)/$(NCMPC)
+
 ICONS := $(XDG_DATA)/icons
 hICONS := $(HOME)/$(ICONS)
 
@@ -63,7 +66,7 @@ hDOCUMENTS := $(HOME)/$(DOCUMENTS)
 FONTS := $(XDG_DATA)/fonts
 hFONTS := $(HOME)/$(FONTS)
 
-all: $(hZSH) $(hX11) $(hTYPORA) $(hBSPWM) $(hGTK2) $(hGTK3) $(hNFETCH) $(hPICOM) $(hPOLYBAR) $(hROFI) $(hROFI)/themes $(SPOOFY) $(hSXHKD) $(hVIFM)/scripts $(hVIFM)/colors $(hVIM) $(hVIM)/colors $(hXDG_DATA)/vim/backup $(hXDG_DATA)/vim/swap $(hXDG_DATA)/vim/undo $(hICONS) $(hTHEMES) $(hFIREFOX) $(hDOCUMENTS) $(hFONTS)/Noto-nerd $(DIR)/$(FONTS)/Noto.zip
+all: $(hZSH) $(hX11) $(hTYPORA) $(hBSPWM) $(hGTK2) $(hGTK3) $(hNFETCH) $(hPICOM) $(hPOLYBAR) $(hROFI) $(hROFI)/themes $(SPOOFY) $(hSXHKD) $(hVIFM)/scripts $(hVIFM)/colors $(hVIM) $(hVIM)/colors $(hXDG_DATA)/vim/backup $(hXDG_DATA)/vim/swap $(hXDG_DATA)/vim/undo $(hNCMPC) $(hICONS) $(hTHEMES) $(hFIREFOX) $(hDOCUMENTS) $(hFONTS)/Noto-nerd $(DIR)/$(FONTS)/Noto.zip
 	ln -s $(DIR)/$(ZSH)/.zshrc 						$(hZSH)/.zshrc
 	ln -s $(DIR)/$(ZSH)/.zshenv 					$(hZSH)/.zshenv
 	ln -s $(DIR)/$(X11)/Xresources 					$(hX11)/Xresources
@@ -85,6 +88,9 @@ all: $(hZSH) $(hX11) $(hTYPORA) $(hBSPWM) $(hGTK2) $(hGTK3) $(hNFETCH) $(hPICOM)
 	ln -s $(DIR)/$(VIFM)/colors/Default.vifm		$(hVIFM)/colors/Default.vifm
 	ln -s $(DIR)/$(VIM)/vimrc						$(hVIM)/vimrc
 	ln -s $(DIR)/$(VIM)/colors/nord.vim				$(hVIM)/colors/nord.vim
+	ln -s $(DIR)/$(NCMPC)/config					$(hNCMPC)/config
+	ln -s $(DIR)/$(NCMPC)/bindings					$(hNCMPC)/bindings
+	ln -s $(DIR)/$(NCMPC)/ncmpcpp-ueberzug			$(hNCMPC)/ncmpcpp-ueberzug
 	ln -s $(DIR)/$(XDG_CONF)/alacritty.yml			$(hXDG_CONF)/alacritty.yml
 	ln -s $(DIR)/$(XDG_CONF)/redshift.conf			$(hXDG_CONF)/redshift.conf
 	ln -s $(DIR)/$(ICONS)/capitaine-cursors-light	$(hICONS)/capitaine-cursors-light
@@ -146,6 +152,9 @@ $(hVIFM)/colors:
 $(hVIM):
 	mkdir -p $(hVIM)
 
+$(hNCMPC):
+	mkdir -p $(hNCMPC)
+
 $(hXDG_DATA)/vim/backup:
 	mkdir -p $(hXDG_DATA)/vim/backup
 
@@ -198,6 +207,9 @@ clean:
 	rm -Rf $(hVIFM)/colors/Default.vifm
 	rm -Rf $(hVIM)/vimrc
 	rm -Rf $(hVIM)/colors/nord.vim
+	rm -Rf $(hNCMPC)/config
+	rm -Rf $(hNCMPC)/bindings
+	rm -Rf $(hNCMPC)/ncmpcpp-ueberzug
 	rm -Rf $(hXDG_CONF)/alacritty.yml
 	rm -Rf $(hXDG_CONF)/redshift.conf
 	rm -Rf $(hICONS)/capitaine-cursors-light

@@ -1,0 +1,74 @@
+# Directory for storing ncmpcpp related files.
+ncmpcpp_directory = ~/.config/ncmpcpp
+
+#lyrics_directory = ~/.lyrics
+#
+### connection settings
+
+mpd_host = 127.0.0.1
+mpd_port = 6600
+mpd_music_dir = ~/Music
+
+## - 0 - default window color (discards all other colors)
+## - 1 - black
+## - 2 - red
+## - 3 - green
+## - 4 - yellow
+## - 5 - blue
+## - 6 - magenta
+## - 7 - cyan
+## - 8 - white
+## - 9 - end of current color
+## If you want to use 256 colors and/or background colors in formats
+## with the syntax $(COLOR), e.g. to set the artist tag to one of the
+## non-standard colors and make it have yellow background, you need to write
+## $(197_yellow)%a$(end).
+
+#### Cover art
+execute_on_song_change="~/.config/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp_cover_art.sh"
+
+### playlist
+song_list_format = "$5{%a »$8 %t$/r$R}|{%f}"
+now_playing_prefix = "$b$5 »» "
+playlist_display_mode = "classic"
+
+### Ueberzug space
+visualizer_look = "  "
+startup_screen = visualizer
+startup_slave_screen = playlist  
+startup_slave_screen_focus = yes 
+locked_screen_width_part = 50
+
+### progress bar
+progressbar_elapsed_color = "white"
+progressbar_color = "black"
+progressbar_look = "━━━"
+
+#### Colors
+main_window_color = blue 
+
+#### General formatting
+titles_visibility = "yes"
+header_visibility = "no"
+statusbar_visibility = "yes"
+playlist_show_remaining_time = yes
+#volume_color = "blue"
+#alternative_header_first_line_format = "$5$b {%a} $/b"
+#alternative_header_second_line_format = "$9{%t}|{/%D/}"
+song_status_format = "{$b$2 $8%a $5 $8%t $5 $5%b}|{$b$2 $8%f}"
+current_item_prefix = $(5)$u 
+current_item_suffix = $/u$(end)
+
+### music stuff
+autocenter_mode = "yes"
+centered_cursor = "yes"
+mouse_support = "yes"
+colors_enabled = "yes"
+mpd_crossfade_time = "0"
+follow_now_playing_lyrics = "yes"
+store_lyrics_in_song_dir = "yes"
+song_window_title_format = ncmpcpp
+ask_before_clearing_playlists = "no"
+volume_change_step = "1"
+
+browser_display_mode = classic

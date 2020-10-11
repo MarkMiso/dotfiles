@@ -7,6 +7,7 @@ export XDG_DATA_HOME=$HOME/.local/share
 
 # adds '.local/bin' to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')" 
+#export PATH=$PATH:/.local/bin:.cargo/bin
 
 # set default programs
 export EDITOR=vim
