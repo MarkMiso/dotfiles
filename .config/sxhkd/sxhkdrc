@@ -20,7 +20,7 @@ super + b
 
 # lock the screen
 super + shift + e
-	slimlock
+    light-locker-command -l
 
 # lower screen brightness
 super + F5
