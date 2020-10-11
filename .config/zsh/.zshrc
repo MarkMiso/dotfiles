@@ -14,7 +14,7 @@ export KEYTIMEOUT=1
 
 # enable tab completion
 autoload -Uz compinit
-compinit
+compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
 # Aliases
 alias ls='ls --color=auto'

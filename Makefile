@@ -65,9 +65,9 @@ hFONTS := $(HOME)/$(FONTS)
 
 all: $(hZSH) $(hX11) $(hTYPORA) $(hBSPWM) $(hGTK2) $(hGTK3) $(hNFETCH) $(hPICOM) $(hPOLYBAR) $(hROFI) $(hROFI)/themes $(SPOOFY) $(hSXHKD) $(hVIFM)/scripts $(hVIFM)/colors $(hVIM) $(hVIM)/colors $(hXDG_DATA)/vim/backup $(hXDG_DATA)/vim/swap $(hXDG_DATA)/vim/undo $(hICONS) $(hTHEMES) $(hFIREFOX) $(hDOCUMENTS) $(hFONTS)/Noto-nerd $(DIR)/$(FONTS)/Noto.zip
 	ln -s $(DIR)/$(ZSH)/.zshrc 						$(hZSH)/.zshrc
-	ln -s $(DIR)/.zshenv 							$(HOME)/.zshenv
+	ln -s $(DIR)/$(ZSH)/.zshenv 					$(hZSH)/.zshenv
 	ln -s $(DIR)/$(X11)/Xresources 					$(hX11)/Xresources
-	ln -s $(DIR)/.xinitrc 							$(HOME)/.xinitrc
+	ln -s $(DIR)/.xprofile 							$(HOME)/.xprofile
 	ln -s $(DIR)/$(TYPORA)/nord.css 				$(hTYPORA)/nord.css
 	ln -s $(DIR)/$(BSPWM)/bspwmrc					$(hBSPWM)/bspwmrc
 	ln -s $(DIR)/$(GTK2)/.gtkrc						$(hGTK2)/.gtkrc
@@ -178,9 +178,9 @@ $(DIR)/$(FONTS)/Noto.zip:
 
 clean:
 	rm -Rf $(hZSH)/.zshrc
-	rm -Rf $(HOME)/.zshenv
+	rm -Rf $(hZSH)/.zshenv
 	rm -Rf $(hX11)/Xresources
-	rm -Rf $(HOME)/.xinitrc
+	rm -Rf $(HOME)/.xprofile
 	rm -Rf $(hTYPORA)/nord.css
 	rm -Rf $(hBSPWM)/bspwmrc
 	rm -Rf $(hGTK2)/.gtkrc

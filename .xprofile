@@ -1,0 +1,5 @@
+#!/bin/sh
+[[ -f ~/.config/zsh/.zshenv ]] && source ~/.config/zsh/.zshenv
+
+xrdb -load $HOME/.config/X11/Xresources
+xsetroot -cursor_name left_ptr
