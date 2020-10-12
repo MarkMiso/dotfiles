@@ -28,8 +28,12 @@ mpd_music_dir = ~/Music
 execute_on_song_change="~/.config/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp_cover_art.sh"
 
 ### playlist
-song_list_format = "$5{%a »$8 %t$/r$R}|{%f}"
-now_playing_prefix = "$b$5 »» "
+#song_list_format = "{$8%a$9 $2»$9 %t$/r$R}|{%f}"
+#now_playing_prefix = "$b $2»» $8"
+#now_playing_suffix = "$9$/b$9"
+song_list_format = "{%a $5»$9 %t$/r$R}|{%f}"
+now_playing_prefix = "$b $2»» $8"
+now_playing_suffix = "$9$/b$9"
 playlist_display_mode = "classic"
 
 ### Ueberzug space
@@ -55,9 +59,9 @@ playlist_show_remaining_time = yes
 #volume_color = "blue"
 #alternative_header_first_line_format = "$5$b {%a} $/b"
 #alternative_header_second_line_format = "$9{%t}|{/%D/}"
-song_status_format = "{$b$2 $8%a $5 $8%t $5 $5%b}|{$b$2 $8%f}"
-current_item_prefix = $(5)$u 
-current_item_suffix = $/u$(end)
+song_status_format = "{$b$2 $8%a $5» $8%b $5» $5%t}|{$b$2 $8%f}"
+current_item_prefix = "$8$b"
+current_item_suffix = "$/b$(end)"
 
 ### music stuff
 autocenter_mode = "yes"
