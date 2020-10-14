@@ -19,5 +19,6 @@ compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 # Aliases
 alias ls='ls --color=auto'
 alias lyrics='$HOME/.local/bin/lyrics'
-alias vimf='$XDG_CONFIG_HOME/vifm/scripts/vifmrun.sh'
+alias vifm='$XDG_CONFIG_HOME/vifm/scripts/vifmrun.sh'
 alias music='$XDG_CONFIG_HOME/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp-ueberzug'
+alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'

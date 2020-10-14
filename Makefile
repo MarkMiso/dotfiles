@@ -73,7 +73,7 @@ all: $(hZSH) $(hX11) $(hTYPORA) $(hBSPWM) $(hGTK2) $(hGTK3) $(hNFETCH) $(hPICOM)
 	ln -s $(DIR)/.xprofile 							$(HOME)/.xprofile
 	ln -s $(DIR)/$(TYPORA)/nord.css 				$(hTYPORA)/nord.css
 	ln -s $(DIR)/$(BSPWM)/bspwmrc					$(hBSPWM)/bspwmrc
-	ln -s $(DIR)/$(GTK2)/.gtkrc						$(hGTK2)/.gtkrc
+	ln -s $(DIR)/$(GTK2)/gtkrc						$(hGTK2)/gtkrc
 	ln -s $(DIR)/$(GTK3)/settings.ini				$(hGTK3)/settings.ini
 	ln -s $(DIR)/$(NFETCH)/config.conf				$(hNFETCH)/config.conf
 	ln -s $(DIR)/$(PICOM)/picom.conf				$(hPICOM)/picom.conf
