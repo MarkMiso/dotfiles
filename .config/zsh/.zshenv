@@ -14,6 +14,9 @@ export EDITOR=vim
 export TERMINAL=alacritty
 export BROWSER=firefox
 
+# set xcursor
+export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons
+
 # set zsh to use XDG Base Directory standard
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 export HISTFILE=$XDG_DATA_HOME/zsh/history
@@ -23,3 +26,4 @@ export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 
 # set gtk-2.0 to use XDG Base Directory standard
 export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc
+

@@ -3,4 +3,5 @@
 
 xrdb -load $HOME/.config/X11/Xresources 
 xsetroot -cursor_name left_ptr 
+
 light-locker &
