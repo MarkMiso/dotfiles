@@ -2,7 +2,7 @@
 
 # enable colors and change prompt
 autoload -U colors && colors
-PS1="λ %~ "
+PS1="%~ %F{blue}» %f"
 
 # configure history
 HISTSIZE=1000
