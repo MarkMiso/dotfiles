@@ -24,9 +24,6 @@ hGTK2 := $(HOME)/$(GTK2)
 GTK3 := $(XDG_CONF)/gtk-3.0
 hGTK3 := $(HOME)/$(GTK3)
 
-NFETCH := $(XDG_CONF)/neofetch
-hNFETCH := $(HOME)/$(NFETCH)
-
 PICOM := $(XDG_CONF)/picom
 hPICOM := $(HOME)/$(PICOM)
 
@@ -51,6 +48,9 @@ hVIM := $(HOME)/$(VIM)
 NCMPC := $(XDG_CONF)/ncmpcpp
 hNCMPC := $(HOME)/$(NCMPC)
 
+FETCH := $(XDG_CONF)/cleanfetch
+hFETCH := $(HOME)/$(FETCH)
+
 ICONS := $(XDG_DATA)/icons
 hICONS := $(HOME)/$(ICONS)
 
@@ -66,7 +66,7 @@ hDOCUMENTS := $(HOME)/$(DOCUMENTS)
 FONTS := $(XDG_DATA)/fonts
 hFONTS := $(HOME)/$(FONTS)
 
-all: $(hZSH) $(hX11) $(hTYPORA) $(hBSPWM) $(hGTK2) $(hGTK3) $(hNFETCH) $(hPICOM) $(hPOLYBAR) $(hROFI) $(hROFI)/themes $(SPOOFY) $(hSXHKD) $(hVIFM)/scripts $(hVIFM)/colors $(hVIM) $(hVIM)/colors $(hXDG_DATA)/vim/backup $(hXDG_DATA)/vim/swap $(hXDG_DATA)/vim/undo $(hNCMPC) $(hICONS) $(hTHEMES) $(hFIREFOX) $(hDOCUMENTS) $(hFONTS)/Noto-nerd $(DIR)/$(FONTS)/Noto.zip
+all: $(hZSH) $(hX11) $(hTYPORA) $(hBSPWM) $(hGTK2) $(hGTK3) $(hPICOM) $(hPOLYBAR) $(hROFI) $(hROFI)/themes $(SPOOFY) $(hSXHKD) $(hVIFM)/scripts $(hVIFM)/colors $(hVIM) $(hVIM)/colors $(hXDG_DATA)/vim/backup $(hXDG_DATA)/vim/swap $(hXDG_DATA)/vim/undo $(hNCMPC) $(hFETCH) $(hICONS) $(hTHEMES) $(hFIREFOX) $(hDOCUMENTS) $(hFONTS)/Noto-nerd $(DIR)/$(FONTS)/Noto.zip
 	ln -s $(DIR)/$(ZSH)/.zshrc 						$(hZSH)/.zshrc
 	ln -s $(DIR)/$(ZSH)/.zshenv 					$(hZSH)/.zshenv
 	ln -s $(DIR)/.xprofile 							$(HOME)/.xprofile
@@ -76,7 +76,6 @@ all: $(hZSH) $(hX11) $(hTYPORA) $(hBSPWM) $(hGTK2) $(hGTK3) $(hNFETCH) $(hPICOM)
 	ln -s $(DIR)/$(BSPWM)/bspwmrc					$(hBSPWM)/bspwmrc
 	ln -s $(DIR)/$(GTK2)/gtkrc						$(hGTK2)/gtkrc
 	ln -s $(DIR)/$(GTK3)/settings.ini				$(hGTK3)/settings.ini
-	ln -s $(DIR)/$(NFETCH)/config.conf				$(hNFETCH)/config.conf
 	ln -s $(DIR)/$(PICOM)/picom.conf				$(hPICOM)/picom.conf
 	ln -s $(DIR)/$(POLYBAR)/config.ini				$(hPOLYBAR)/config.ini
 	ln -s $(DIR)/$(ROFI)/config.rasi				$(hROFI)/config.rasi
@@ -92,6 +91,7 @@ all: $(hZSH) $(hX11) $(hTYPORA) $(hBSPWM) $(hGTK2) $(hGTK3) $(hNFETCH) $(hPICOM)
 	ln -s $(DIR)/$(NCMPC)/config					$(hNCMPC)/config
 	ln -s $(DIR)/$(NCMPC)/bindings					$(hNCMPC)/bindings
 	ln -s $(DIR)/$(NCMPC)/ncmpcpp-ueberzug			$(hNCMPC)/ncmpcpp-ueberzug
+	ln -s $(DIR)/$(FETCH)/cleanfetch.sh				$(hFETCH)/cleanfetch.sh
 	ln -s $(DIR)/$(XDG_CONF)/alacritty.yml			$(hXDG_CONF)/alacritty.yml
 	ln -s $(DIR)/$(XDG_CONF)/redshift.conf			$(hXDG_CONF)/redshift.conf
 	ln -s $(DIR)/$(ICONS)/capitaine-cursors-light	$(hICONS)/capitaine-cursors-light
@@ -119,9 +119,6 @@ $(hGTK2):
 
 $(hGTK3):
 	mkdir -p $(hGTK3)
-
-$(hNFETCH):
-	mkdir -p $(hNFETCH)
 
 $(hPICOM):
 	mkdir -p $(hPICOM)
@@ -155,6 +152,9 @@ $(hVIM):
 
 $(hNCMPC):
 	mkdir -p $(hNCMPC)
+
+$(hFETCH):
+	mkdir -p $(hFETCH)
 
 $(hXDG_DATA)/vim/backup:
 	mkdir -p $(hXDG_DATA)/vim/backup
@@ -196,7 +196,6 @@ clean:
 	rm -Rf $(hBSPWM)/bspwmrc
 	rm -Rf $(hGTK2)/gtkrc
 	rm -Rf $(hGTK3)/settings.ini
-	rm -Rf $(hNFETCH)/config.conf
 	rm -Rf $(hPICOM)/picom.conf
 	rm -Rf $(hPOLYBAR)/config.ini
 	rm -Rf $(hROFI)/config.rasi
@@ -212,6 +211,7 @@ clean:
 	rm -Rf $(hNCMPC)/config
 	rm -Rf $(hNCMPC)/bindings
 	rm -Rf $(hNCMPC)/ncmpcpp-ueberzug
+	rm -Rf $(hFETCH)/cleanfetch.sh
 	rm -Rf $(hXDG_CONF)/alacritty.yml
 	rm -Rf $(hXDG_CONF)/redshift.conf
 	rm -Rf $(hICONS)/capitaine-cursors-light
