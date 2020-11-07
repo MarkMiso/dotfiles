@@ -33,8 +33,8 @@ hPOLYBAR := $(HOME)/$(POLYBAR)
 ROFI := $(XDG_CONF)/rofi
 hROFI := $(HOME)/$(ROFI)
 
-SPOOFY := $(XDG_CONF)/spicetify/Themes/Nord
-hSPOOFY := $(HOME)/$(SPOOFY)
+SPOTIFY := $(XDG_CONF)/spicetify/Themes
+hSPOTIFY := $(HOME)/$(SPOTIFY)
 
 SXHKD := $(XDG_CONF)/sxhkd
 hSXHKD := $(HOME)/$(SXHKD)
@@ -66,7 +66,7 @@ hDOCUMENTS := $(HOME)/$(DOCUMENTS)
 FONTS := $(XDG_DATA)/fonts
 hFONTS := $(HOME)/$(FONTS)
 
-all: $(hZSH) $(hX11) $(hTYPORA) $(hBSPWM) $(hGTK2) $(hGTK3) $(hPICOM) $(hPOLYBAR) $(hROFI) $(hROFI)/themes $(SPOOFY) $(hSXHKD) $(hVIFM)/scripts $(hVIFM)/colors $(hVIM) $(hVIM)/colors $(hXDG_DATA)/vim/backup $(hXDG_DATA)/vim/swap $(hXDG_DATA)/vim/undo $(hNCMPC) $(hFETCH) $(hICONS) $(hTHEMES) $(hFIREFOX) $(hDOCUMENTS) $(hFONTS)/Noto-nerd $(DIR)/$(FONTS)/Noto.zip
+all: $(hZSH) $(hX11) $(hTYPORA) $(hBSPWM) $(hGTK2) $(hGTK3) $(hPICOM) $(hPOLYBAR) $(hROFI) $(hROFI)/themes $(SPOTIFY) $(hSXHKD) $(hVIFM)/scripts $(hVIFM)/colors $(hVIM) $(hVIM)/colors $(hXDG_DATA)/vim/backup $(hXDG_DATA)/vim/swap $(hXDG_DATA)/vim/undo $(hNCMPC) $(hFETCH) $(hICONS) $(hTHEMES) $(hFIREFOX) $(hDOCUMENTS) $(hFONTS)/Noto-nerd $(DIR)/$(FONTS)/Noto.zip
 	ln -s $(DIR)/$(ZSH)/.zshrc 						$(hZSH)/.zshrc
 	ln -s $(DIR)/$(ZSH)/.zshenv 					$(hZSH)/.zshenv
 	ln -s $(DIR)/.xprofile 							$(HOME)/.xprofile
@@ -80,7 +80,7 @@ all: $(hZSH) $(hX11) $(hTYPORA) $(hBSPWM) $(hGTK2) $(hGTK3) $(hPICOM) $(hPOLYBAR
 	ln -s $(DIR)/$(POLYBAR)/config.ini				$(hPOLYBAR)/config.ini
 	ln -s $(DIR)/$(ROFI)/config.rasi				$(hROFI)/config.rasi
 	ln -s $(DIR)/$(ROFI)/themes/Nord.rasi			$(hROFI)/themes/Nord.rasi
-	ln -s $(DIR)/$(SPOOFY)/color.ini				$(hSPOOFY)/color.ini
+	ln -s $(DIR)/$(SPOTIFY)/Dribbblish				$(hSPOTIFY)/Dribbblish
 	ln -s $(DIR)/$(SXHKD)/sxhkdrc					$(hSXHKD)/sxhkdrc
 	ln -s $(DIR)/$(VIFM)/vifmrc						$(hVIFM)/vifmrc
 	ln -s $(DIR)/$(VIFM)/scripts/vifmimg			$(hVIFM)/scripts/vifmimg
@@ -132,8 +132,8 @@ $(hROFI):
 $(hROFI)/themes:
 	mkdir -p $(hROFI)/themes
 
-$(hSPOOFY):
-	mkdir -p $(hSPOOFY)
+$(hSPOTIFY):
+	mkdir -p $(hSPOTIFY)
 
 $(hSXHKD):
 	mkdir -p $(hSXHKD)
@@ -200,7 +200,7 @@ clean:
 	rm -Rf $(hPOLYBAR)/config.ini
 	rm -Rf $(hROFI)/config.rasi
 	rm -Rf $(hROFI)/themes/Nord.rasi
-	rm -Rf $(hSPOOFY)/color.ini
+	rm -Rf $(hSPOTIFY)/Dribbblish
 	rm -Rf $(hSXHKD)/sxhkdrc
 	rm -Rf $(hVIFM)/vifmrc
 	rm -Rf $(hVIFM)/scripts/vifmimg
