@@ -1,39 +1,5 @@
 # Dribbblish
 
-## Screenshots
-#### Base
-![demo1](./base.png)
-
-#### White
-![demo2](./white.png)
-
-#### Dark
-![demo3](./dark.png)
-
-#### Dracula
-![demo4](./dracula.png)
-
-#### Gruvbox
-![demoGruvbox](./gruvbox.png)
-
-#### Nord-Dark
-![demo5](./nord-dark.png)
-
-#### Nord-Light
-![demo6](./nord-light.png)
-
-#### Horizon
-![demoHorizon](./horizon.png)
-
-#### Samouraï
-![demoSamourai](./samourai.png)
-
-#### Beach-Sunset
-![demo7](./beach-sunset.png)
-
-#### Purple
-![demo8](./purple.png)
-
 ## More
 Requires spicetify-cli **v0.9.9 or newer**.
 
@@ -47,7 +13,7 @@ In **Bash**:
 cd "$(dirname "$(spicetify -c)")/Themes/Dribbblish"
 cp dribbblish.js ../../Extensions
 spicetify config extensions dribbblish.js
-spicetify config current_theme Dribbblish color_scheme base
+spicetify config current_theme Dribbblish color_scheme nord-night
 spicetify config inject_css 1 replace_colors 1 overwrite_assets 1
 spicetify apply
 ```
@@ -74,7 +40,7 @@ Moreover, by default, Spotify adjusted sidebar items and profile menu icon to st
 ![nocontrol](https://i.imgur.com/qdZyv1t.png)
 
 ### Color Schemes
-There are 9 color schemes you can choose: `base`, `white`, `dark`, `dracula`, `gruvbox`, `nord-dark`, `nord-light`, `horizon`, `samourai`, `purple`. Change scheme with commands:
+Change scheme with commands:
 ```
 spicetify config color_scheme <scheme name>
 spicetify apply
