@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>~</title>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+		<script src="scripts/transitions.js"></script>
+	</head>
+
+	<body>
+		<svg id="fader"></svg>
+        <script>fadeInPage();</script>
+
+		<!-- Welcome screen -->
+		<div id="main_window">
+			<img id=leftImg src="assets/img.jpg" class="image">
+			<div id="content">
+				<h1 class="title"><a href="https://youtu.be/zLhoDB-ORLQ">Oh hi Mark</a></h1>
+				<div id="date">
+					<script type="text/javascript">
+						function doDate() {
+							var str = "";
+							var months = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+							var clock = new Date();
+							var now = new Date();
+
+							str += months[clock.getMonth()] + " " + now.getDate() + ", " + clock.getFullYear() + " | " + ("0" + now.getHours()).slice(-2) +":" + ("0" + now.getMinutes()).slice(-2) + ":" + ("0" + now.getSeconds()).slice(-2);
+							document.getElementById("date").innerHTML = str;
+						}
+						setInterval(doDate, 1000);
+						doDate();
+					</script>
+				</div>
+
+		<!-- Web search -->
+				<div id="web_search">
+					<form action="https://duckduckgo.com/" method="GET" autocomplete="off">
+						<label for="q">»</label>
+						<input autofocus
+			        	 		id="q"
+			         			name="q"
+			         			type="search"
+			         			placeholder="search with duckduckgo...">
+					</form>
+				</div>
+
+		<!-- Links -->
+				<nav>
+					<div id=links_container>
+						<ul>
+							<a class="subtitle">Frequent</a>
+								<li><a href="https://github.com/">GitHub</a></li>
+								<li><a href="https://web.telegram.org/">Telegram</a></li>
+								<li><a href="https://drive.google.com/">GDrive</a></li>
+						</ul>
+						<ul>
+							<a class="subtitle">Media</a>
+								<li><a href="https://www.youtube.com/">YouTube</a></li>
+								<li><a href="https://www.primevideo.com/">PrimeVideo</a></li>
+								<li><a href="https://www.twitch.tv/">Twitch</a></li>
+						</ul>
+						<ul>
+							<a class="subtitle">Social</a>
+								<li><a href="https://www.reddit.com/">Reddit</a></li>
+								<li><a href="https://www.instagram.com/">Instagram</a></li>
+								<li><a href="https://twitter.com/">Twitter</a></li>
+						</ul>
+						<ul>
+							<a class="subtitle">Uni</a>
+								<li><a href="https://www.unive.it/">Unive</a></li>
+								<li><a href="https://moodle.unive.it/">Moodle</a></li>
+								<li><a href="https://mail.google.com/">Mail</a></li>
+						</ul>
+						<ul>
+							<a class="subtitle">Others</a>
+								<li><a href="https://www.deezer.com/">Music</a></li>
+								<li><a href="https://www.reddit.com/r/unixporn/"></a>Porn</li>
+								<li><a href="https://rms.sexy/">ActualPorn</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<div class="bottom">
+			<p class="credits">
+				<a href="https://www.deviantart.com/nuralifsidoel/art/Futaba-Rio-Seishun-Buta-Yarou-Vector-778405449">Art by NurAlifSidoel on DeviantArt</a>
+			</p>
+
+			<div class="contacts">
+				<p>
+					<a href="https://gitlab.com/wolfiy/wlfys-minimal-startpage">GitLab Repo</a> | 
+					<span id="light-mode-toggle" class="light-mode-toggle">Switch themes</span>
+				</p>
+			</div>
+		</div>
+
+		<script src="scripts/darkmode.js"></script>
+	</body>
+</html>
