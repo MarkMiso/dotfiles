@@ -99,13 +99,13 @@ form:focus-within input::placeholder {
 	flex-wrap: wrap;
 }
 
-#links_container li, a {
-	color: var(--white);
+.link{
 	text-decoration: none;
 	transition: all 0.4s;
+	color: var(--white);
 }
 
-#links_container a:hover {
+.link:hover {
 	color: var(--red);
 	transition: all 0.4s;
 }
@@ -118,6 +118,7 @@ form:focus-within input::placeholder {
 .title a {
 	font-weight: bold;
 	font-style: italic;
+	text-decoration: none;
 	color: var(--white);
 }
 
