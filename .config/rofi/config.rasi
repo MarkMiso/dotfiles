@@ -1,11 +1,17 @@
 /* rofi configuration file by markmiso */
 
 configuration {
-	modi: "window,drun,ssh";
-	width: 30;
-	lines: 15;
+	modi: "window,run,ssh,drun";
+	width: 20;
+	lines: 5;
 	columns: 1;
 	font: "NotoSansMono 12";
+	dpi: 120;
+	theme: "nord";
+	display-window: "Window";
+	display-run: "Execute";
+	display-ssh: "SSH";
+	display-drun: "Launch";
 /*	bw: 1;*/
 /*	location: 0;*/
 /*	padding: 5;*/
@@ -47,7 +53,6 @@ configuration {
 /*	hide-scrollbar: false;*/
 /*	fullscreen: false;*/
 /*	fake-transparency: false;*/
-	dpi: 120;
 /*	threads: 0;*/
 /*	scrollbar-width: 8;*/
 /*	scroll-method: 0;*/
@@ -55,7 +60,6 @@ configuration {
 /*	window-format: "{w}    {c}   {t}";*/
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
-	theme: "Nord";
 /*	color-normal: ;*/
 /*	color-urgent: ;*/
 /*	color-active: ;*/
@@ -65,11 +69,7 @@ configuration {
 /*	matching-negate-char: '-' /* unsupported */;*/
 /*	cache-dir: ;*/
 /*	pid: "/run/user/1000/rofi.pid";*/
-/*	display-window: ;*/
 /*	display-windowcd: ;*/
-/*	display-run: ;*/
-/*	display-ssh: ;*/
-/*	display-drun: ;*/
 /*	display-combi: ;*/
 /*	display-keys: ;*/
 /*	kb-primary-paste: "Control+V,Shift+Insert";*/
