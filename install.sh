@@ -7,25 +7,34 @@
 # get script directory
 dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
-# get list of files and folders to symlink/create
-file_list="$(find ${dir} \
-    -type d -name ".git" -prune -o \
-    -type f -name ".gitignore" -o \
-    -type f -name ".gitkeep" -o \
-    -type f -name "install.sh" -o \
-    -type d -path "${dir}/.local/share/fonts" -prune -o \
-    -type d -path "${dir}/.local/share/icons" -prune -o \
-    -type d -path "${dir}/.local/share/themes" -prune -o \
-    -type f -printf "%P\n")"
-
-folder_list="$(find ${dir} \
-    -type d -name ".git" -prune -o \
-    -type d -path "${dir}/.local/share/fonts" -prune -o \
-    -type d -path "${dir}/.local/share/icons" -prune -o \
-    -type d -path "${dir}/.local/share/themes" -prune -o \
-    -type d -printf "%P\n")"
-
+# list of folders to symlync
+# NOTE: all paths here should be complete and relative to the script folder
 extra_list=(".local/share/fonts" ".local/share/icons" ".local/share/themes")
+
+# build list of files symlink
+find_file='find ${dir} 
+    -type d -name ".git" -prune -o 
+    -type f -name ".gitignore" -o 
+    -type f -name ".gitkeep" -o 
+    -type f -name "install.sh" -o '
+
+for i in ${extra_list[@]}; do
+    find_file=$find_file'-type d -path "${dir}/'${i}'" -prune -o '
+done
+
+find_file+='-type f -printf "%P\n"'
+file_list=$(eval $find_file)
+
+# build list of folders to create
+find_die='find ${dir} 
+    -type d -name ".git" -prune -o ' 
+
+for i in ${extra_list[@]}; do
+    find_dir=$find_die'-type d -path "${dir}/'${i}'" -prune -o '
+done
+
+find_dir+='-type d -printf "%P\n"'
+dir_list=$(eval $find_dir)
 
 # download and extract font
 fonts=${dir}/".local/share/fonts"
@@ -37,7 +46,7 @@ if (test ! -d ${fonts}/Noto-nerd) then
 fi 
 
 # create necessary folders
-for i in ${folder_list}; do
+for i in ${dir_list}; do
     mkdir -p ${HOME}/${i}
 done
 
