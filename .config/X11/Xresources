@@ -1,2 +1,9 @@
+# 2160 settings start
 Xft.dpi: 120
+# 2160 settings end 
+
+# 1080 settings start
+#Xft.dpi: 96
+# 1080 settings end 
+
 Xcursor.theme: capitaine-cursors-light
